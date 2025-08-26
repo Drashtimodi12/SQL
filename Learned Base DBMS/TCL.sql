@@ -1,0 +1,13 @@
+#TCL
+
+START TRANSACTION;
+
+SAVEPOINT a;
+
+DELETE FROM emp WHERE eid = 3;
+
+UPDATE emp SET age = 40 WHERE eid = 4;
+
+ROLLBACK TO a;
+
+COMMIT;
